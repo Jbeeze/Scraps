@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int cheese = 0;
+    private int yumMeter = 0;
 
     [SerializeField] private TMP_Text cheeseText;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Cheese"))
+        if (collision.gameObject.CompareTag("Good_Item"))
         {
             Destroy(collision.gameObject);
-            cheese += 1;
-            cheeseText.text = "Cheese: " + cheese;
+            yumMeter += 1;
+            cheeseText.text = "Yum Meter: " + yumMeter;
         }
     }
 
