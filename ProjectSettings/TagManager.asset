@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Cheese
+  - Bad_Item
+  - Good_Item
   layers:
   - Default
   - TransparentFX

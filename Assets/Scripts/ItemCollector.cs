@@ -8,16 +8,23 @@ public class ItemCollector : MonoBehaviour
 {
     private int yumMeter = 0;
 
-    [SerializeField] private TMP_Text cheeseText;
+    [SerializeField] private TMP_Text yumText;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Destroy(collision.gameObject);
+        
         if (collision.gameObject.CompareTag("Good_Item"))
         {
-            Destroy(collision.gameObject);
             yumMeter += 1;
-            cheeseText.text = "Yum Meter: " + yumMeter;
         }
+        
+        else
+        {
+            yumMeter -= 1;
+        }
+
+        yumText.text = "Yum Meter: " + yumMeter;
     }
 
 }
